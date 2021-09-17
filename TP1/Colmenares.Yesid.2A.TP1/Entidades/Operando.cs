@@ -22,7 +22,6 @@ namespace Entidades
             double.TryParse(strNumero, out this.numero);
         }
 
-
         private static double ValidarOperando(string strNumero)
         {
             double valor = 0;
@@ -32,15 +31,16 @@ namespace Entidades
         }
         private static bool EsBinario(string binario)
         {
-            bool retorno = true;
+            bool retorno = false;
 
             foreach (char item in binario)
             {
-                if (item != '1' || item != '0')
+                if (item != '1' && item != '0')
                 {
                     retorno = false;
                     break;
                 }
+                retorno = true;
             }
 
             return retorno;

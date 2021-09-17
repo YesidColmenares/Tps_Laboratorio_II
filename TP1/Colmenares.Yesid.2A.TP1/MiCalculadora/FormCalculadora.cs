@@ -17,12 +17,21 @@ namespace MiCalculadora
         {
             InitializeComponent();
         }
+        private void FormCalculadora_Load(object sender, EventArgs e)
+        {
+            this.cmbOperador.Items.Add("");
+            this.cmbOperador.Items.Add("+");
+            this.cmbOperador.Items.Add("-");
+            this.cmbOperador.Items.Add("/");
+            this.cmbOperador.Items.Add("*");
+            this.Limpiar();
+        }
 
         private void Limpiar()
         {
             this.txtNumero1.Clear();
             this.txtNumero2.Clear();
-            this.cmbOperador.SelectedIndex = -1;
+            this.cmbOperador.SelectedIndex = 0;
             this.lblResultado.Text = "";
         }
         private static double Operar(string numero1, string numero2, string operador)
@@ -32,21 +41,11 @@ namespace MiCalculadora
             return Calculadora.Operar(new Operando(numero1), new Operando(numero2), caracter);
         }
 
-        private void FormCalculadora_Load(object sender, EventArgs e)
-        {
-            this.cmbOperador.Text = " ";
-            this.cmbOperador.Items.Add("+");
-            this.cmbOperador.Items.Add("-");
-            this.cmbOperador.Items.Add("/");
-            this.cmbOperador.Items.Add("*");
-            this.Limpiar();
-        }
-
         private void btnOperar_Click(object sender, EventArgs e)
         {
             string resultado;
-            double numero1 = -1;
-            double numero2 = -1;
+            double numero1;
+            double numero2;
             string operador = this.cmbOperador.Text;
 
             resultado = FormCalculadora.Operar(this.txtNumero1.Text, this.txtNumero2.Text, this.cmbOperador.Text).ToString();
@@ -55,24 +54,19 @@ namespace MiCalculadora
             double.TryParse(this.txtNumero1.Text, out numero1);
             double.TryParse(this.txtNumero2.Text, out numero2);
 
-            if (numero1 != -1 && numero2 != -1)
+            if (operador == "")
             {
-                if (operador == "") 
-                {
-                    operador = "+";
-                }
-                this.lstOperaciones.Items.Add($"{numero1} {operador} {numero2} = {resultado}");
-            }           
+                operador = "+";
+            }
+            this.lstOperaciones.Items.Add($"{numero1} {operador} {numero2} = {resultado}");
         }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.Limpiar();
+        }
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void btnConvertirABinario_Click(object sender, EventArgs e)
@@ -80,9 +74,9 @@ namespace MiCalculadora
             string numeroDecimal = this.lblResultado.Text;
             this.lblResultado.Text = Operando.DecimalBinario(numeroDecimal);
 
-            if (!numeroDecimal.Equals("Valor Invalido"))
+            if (!this.lblResultado.Text.Equals("Valor Invalido"))
             {
-                this.lstOperaciones.Items.Add(this.lblResultado.Text);
+                this.lstOperaciones.Items.Add($"{numeroDecimal} = {this.lblResultado.Text}");
             }
             
         }
@@ -91,11 +85,12 @@ namespace MiCalculadora
             string numeroBinario = this.lblResultado.Text;
             this.lblResultado.Text = Operando.BinarioDecimal(numeroBinario);
 
-            if (!numeroBinario.Equals("Valor Invalido"))
+            if (!this.lblResultado.Text.Equals("Valor Invalido"))
             {
-                this.lstOperaciones.Items.Add(this.lblResultado.Text);
+                this.lstOperaciones.Items.Add($"{numeroBinario} = {this.lblResultado.Text}");
             }
         }
+
         private void FormCalculadora_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("¿Seguro desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
