@@ -33,14 +33,17 @@ namespace Entidades
         {
             bool retorno = false;
 
-            foreach (char item in binario)
+            if (binario.Length < 10) 
             {
-                if (item != '1' && item != '0')
+                foreach (char item in binario)
                 {
-                    retorno = false;
-                    break;
+                    if (item != '1' && item != '0')
+                    {
+                        retorno = false;
+                        break;
+                    }
+                    retorno = true;
                 }
-                retorno = true;
             }
 
             return retorno;
