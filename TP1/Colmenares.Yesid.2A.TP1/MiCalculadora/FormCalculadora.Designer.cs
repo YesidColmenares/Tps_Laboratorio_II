@@ -75,7 +75,7 @@ namespace MiCalculadora
             this.lstOperaciones.ItemHeight = 15;
             this.lstOperaciones.Location = new System.Drawing.Point(504, 26);
             this.lstOperaciones.Name = "lstOperaciones";
-            this.lstOperaciones.Size = new System.Drawing.Size(347, 154);
+            this.lstOperaciones.Size = new System.Drawing.Size(433, 154);
             this.lstOperaciones.TabIndex = 3;
             // 
             // btnOperar
@@ -142,7 +142,7 @@ namespace MiCalculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 188);
+            this.ClientSize = new System.Drawing.Size(946, 188);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnConvertirADecimal);
             this.Controls.Add(this.btnConvertirABinario);

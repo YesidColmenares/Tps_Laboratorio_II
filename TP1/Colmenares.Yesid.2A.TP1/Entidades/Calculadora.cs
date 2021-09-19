@@ -8,40 +8,50 @@ namespace Entidades
 {
     public class Calculadora
     {
+        /// <summary>
+        /// Validará y realizará la operación pedida entre ambos números.
+        /// </summary>
+        /// <param name="num1">Objeto de la clase Entidades.Operando</param>
+        /// <param name="num2">Objeto de la clase Entidades.Operando</param>
+        /// <param name="operador"> Caracter que contiene el operador </param>
+        /// <returns>Resultado de la operación en un double</returns>
         public static double Operar(Operando num1, Operando num2, char operador)
         {
             double valor = 0;
 
-            if (num1 != null || num2 != null) 
+            switch (Calculadora.ValidarOperador(operador))
             {
-                switch (Calculadora.ValidarOperador(operador))
-                {
-                    case '+':
-                        valor = num1 + num2;
-                        break;
+                case '+':
+                    valor = num1 + num2;
+                    break;
 
-                    case '-':
-                        valor = num1 - num2;
-                        break;
+                case '-':
+                    valor = num1 - num2;
+                    break;
 
-                    case '/':
-                        valor = num1 / num2;
-                        break;
+                case '/':
+                    valor = num1 / num2;
+                    break;
 
-                    case '*':
-                        valor = num1 * num2;
-                        break;
-                }
+                case '*':
+                    valor = num1 * num2;
+                    break;
             }
             return valor;
         }
+
+        /// <summary>
+        /// validará que el operador recibido sea ( + , - , / , *)
+        /// </summary>
+        /// <param name="operador"> Caracter que contiene el operador </param>
+        /// <returns> En caso que no se encuentre el operador retornará '+'</returns>
         private static char ValidarOperador(char operador)
         {
-            char valor = '+';
+            char valor = operador;
 
-            if (operador.Equals('+') || operador.Equals('-') || operador.Equals('/') || operador.Equals('*'))
+            if (operador.Equals('\0'))
             {
-                valor = operador;
+                valor = '+';
             }
             return valor;
         }
