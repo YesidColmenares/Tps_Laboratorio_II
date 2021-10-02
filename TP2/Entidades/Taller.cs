@@ -11,38 +11,39 @@ namespace Entidades
     /// </summary>
     public sealed class Taller
     {
-        public enum ETipo //FIJARNOS EN EL ACCESO
-        {
-            Ciclomotor,
-            Sedan,
-            SUV,
-            Todos
-        }
-
         private int espacioDisponible;
         private List<Vehiculo> vehiculos;
 
         #region "Constructores"
+        /// <summary>
+        /// Constructor por defecto privado que inicializa la lista de vehiculos
+        /// </summary>
         private Taller()
         {
             this.vehiculos = new List<Vehiculo>();
         }
+        /// <summary>
+        /// Sobrecarga del constructor recibiendo como parametro el espacio que sera disponible en la lista de vehiculos
+        /// </summary>
+        /// <param name="espacioDisponible"></param>
         public Taller(int espacioDisponible) : this()
         {
             this.espacioDisponible = espacioDisponible;
         }
         #endregion
 
+
         #region "Sobrecargas"
         /// <summary>
         /// Muestro el estacionamiento y TODOS los vehículos
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retorna un string que muestra el estacionamiento y todos los vehiculos</returns>
         public override string ToString()
         {
             return Taller.Listar(this, ETipo.Todos);
         }
         #endregion
+
 
         #region "Métodos"
 
@@ -52,14 +53,14 @@ namespace Entidades
         /// </summary>
         /// <param name="taller">Elemento a exponer</param>
         /// <param name="ETipo">Tipos de ítems de la lista a mostrar</param>
-        /// <returns></returns>
-        public static string Listar(Taller taller, ETipo tipo)
+        /// <returns>Retorna un string con los datos del elemento del tipo requerido</returns>
+        public static string Listar(Taller t, ETipo tipo)
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles", taller.vehiculos.Count, taller.espacioDisponible);
+            sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles", t.vehiculos.Count, t.espacioDisponible);
             sb.AppendLine("");
-            foreach (Vehiculo v in taller.vehiculos)
+            foreach (Vehiculo v in t.vehiculos)
             {
                 switch (tipo)
                 {
@@ -94,20 +95,21 @@ namespace Entidades
         }
         #endregion
 
+
         #region "Operadores"
         /// <summary>
         /// Agregará un elemento a la lista
         /// </summary>
         /// <param name="taller">Objeto donde se agregará el elemento</param>
         /// <param name="vehiculo">Objeto a agregar</param>
-        /// <returns></returns>
-        public static Taller operator +(Taller taller, Vehiculo vehiculo)
+        /// <returns>Retorna un objeto del tipo Taller con el elmento agregado o no en la lista</returns>
+        public static Taller operator +(Taller t, Vehiculo vehiculo)
         {
             bool valor = false;
 
-            if (taller.espacioDisponible > taller.vehiculos.Count) 
+            if (t.espacioDisponible > t.vehiculos.Count) 
             {
-                foreach (Vehiculo v in taller.vehiculos)
+                foreach (Vehiculo v in t.vehiculos)
                 {
                     if (v == vehiculo)
                     {
@@ -118,31 +120,45 @@ namespace Entidades
 
                 if (valor == false)
                 {
-                    taller.vehiculos.Add(vehiculo);
+                    t.vehiculos.Add(vehiculo);
                 }
             }
             
-            return taller;
+            return t;
         }
+
         /// <summary>
         /// Quitará un elemento de la lista
         /// </summary>
         /// <param name="taller">Objeto donde se quitará el elemento</param>
         /// <param name="vehiculo">Objeto a quitar</param>
-        /// <returns></returns>
-        public static Taller operator -(Taller taller, Vehiculo vehiculo)
+        /// <returns>Retorna un objeto del tipo Taller con el elmento eliminado o no de la lista<</returns>
+        public static Taller operator -(Taller t, Vehiculo vehiculo)
         {
-            for (int i = 0; i< taller.vehiculos.Count; i++) 
+            for (int i = 0; i< t.vehiculos.Count; i++) 
             { 
-                if (taller.vehiculos[i] == vehiculo)
+                if (t.vehiculos[i] == vehiculo)
                 {
-                    taller.vehiculos.RemoveAt(i);
+                    t.vehiculos.RemoveAt(i);
                     break;
                 }
             }
 
-            return taller;
+            return t;
         }
         #endregion
+
+
+        /// <summary>
+        /// Enumerado que contiene los tipos de vehiculos
+        /// </summary>
+        public enum ETipo
+        {
+            Ciclomotor,
+            Sedan,
+            SUV,
+            Todos
+        }
+
     }
 }

@@ -11,27 +11,17 @@ namespace Entidades
     /// </summary>
     public abstract class Vehiculo
     {
-        public enum EMarca //FIJARNOS EN EL ACCESO
-        {
-            Chevrolet,
-            Ford,
-            Renault,
-            Toyota,
-            BMW,
-            Honda,
-            HarleyDavidson
-        }
-        public enum ETamanio //FIJARNOS EN EL ACCESO
-        {
-            Chico,
-            Mediano,
-            Grande
-        }
-
-        private EMarca marca;
         private string chasis;
         private ConsoleColor color;
+        private EMarca marca;
 
+
+        /// <summary>
+        /// Constructor de la clase abstracta Vehiculo, crea un vehiculo con los siguientes atributos; Chasis, Marca y color
+        /// </summary>
+        /// <param name="chasis">Numero de serie del vehiculo</param>
+        /// <param name="marca">Marca del vehiculo</param>
+        /// <param name="color">Color del vehiculo</param>
         public Vehiculo(string chasis, EMarca marca, ConsoleColor color)
         {
             this.chasis = chasis;
@@ -39,20 +29,21 @@ namespace Entidades
             this.color = color;
         }
 
-        /// <summary>
-        /// ReadOnly: Retornará el tamaño
-        /// </summary>
-        protected abstract ETamanio Tamanio { get; }
 
         /// <summary>
         /// Publica todos los datos del Vehiculo.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retorna un string con todos los datos del vehiculo</returns>
         public virtual string Mostrar()
         {
             return (string)this;
         }
 
+
+        /// <summary>
+        /// Conversion explicita del tipo Vehiculo a String
+        /// </summary>
+        /// <param name="p">Vehiculo a mostrar</param>
         public static explicit operator string(Vehiculo p)
         {
             StringBuilder sb = new StringBuilder();
@@ -69,8 +60,8 @@ namespace Entidades
         /// <summary>
         /// Dos vehiculos son iguales si comparten el mismo chasis
         /// </summary>
-        /// <param name="v1"></param>
-        /// <param name="v2"></param>
+        /// <param name="v1">Primer vehiculo a comparar</param>
+        /// <param name="v2">Segundo vehiculo a comparar</param>
         /// <returns></returns>
         public static bool operator ==(Vehiculo v1, Vehiculo v2)
         {
@@ -80,12 +71,45 @@ namespace Entidades
         /// <summary>
         /// Dos vehiculos son distintos si su chasis es distinto
         /// </summary>
-        /// <param name="v1"></param>
-        /// <param name="v2"></param>
+        /// <param name="v1">Primer vehiculo a comparar</param>
+        /// <param name="v2">Segundo vehiculo a comparar</param>
         /// <returns></returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
             return !(v1.chasis == v2.chasis);
+        }
+
+
+        /// <summary>
+        /// ReadOnly: Retornará el tamaño
+        /// </summary>
+        protected abstract ETamanio Tamanio 
+        { 
+            get; 
+        }
+
+
+        /// <summary>
+        /// Enumerado que contiene marcas de los vehiculos
+        /// </summary>
+        public enum EMarca
+        {
+            Chevrolet,
+            Ford,
+            Renault,
+            Toyota,
+            BMW,
+            Honda,
+            HarleyDavidson
+        }
+        /// <summary>
+        /// Enumerado que contiene los tamanios de los vehiculos
+        /// </summary>
+        public enum ETamanio
+        {
+            Chico,
+            Mediano,
+            Grande
         }
     }
 }
