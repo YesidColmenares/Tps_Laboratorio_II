@@ -23,13 +23,12 @@ namespace Entidades
         /// Muestra todos los datos del objeto de tipo Suv
         /// </summary>
         /// <returns>Retorna un string con todo los datos del tipo Suv</returns>
-        public override sealed string Mostrar()
+        public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("SUV");
-            sb.AppendLine(base.Mostrar());
-            sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
+            sb.Append(base.Mostrar());
             sb.AppendLine("");
             sb.AppendLine("---------------------");
 

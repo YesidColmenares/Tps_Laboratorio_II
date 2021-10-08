@@ -24,13 +24,12 @@ namespace Entidades
         /// Muestra todos los datos del objeto de tipo Ciclomotor
         /// </summary>
         /// <returns>Retorna un string con todo los datos del tipo Ciclomotor</returns>
-        public override sealed string Mostrar()
+        public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("CICLOMOTOR");
-            sb.AppendLine(base.Mostrar());
-            sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
+            sb.Append(base.Mostrar());
             sb.AppendLine("");
             sb.AppendLine("---------------------");
 

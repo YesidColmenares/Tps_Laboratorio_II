@@ -22,3 +22,9 @@ C:\Users\Yesid\source\repos\TP2\Entidades\obj\Debug\Entidades.csproj.AssemblyRef
 C:\Users\Yesid\source\repos\TP2\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Yesid\source\repos\TP2\Entidades\obj\Debug\Entidades.dll
 C:\Users\Yesid\source\repos\TP2\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\TP2\Entidades\bin\Debug\Entidades.dll
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\TP2\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\TP2\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\TP2\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\TP2\Entidades\obj\Debug\Entidades.dll
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\TP2\Entidades\obj\Debug\Entidades.pdb

@@ -41,13 +41,12 @@ namespace Entidades
         /// Muestra todos los datos del objeto de tipo Sedan
         /// </summary>
         /// <returns>Retorna un string con todo los datos del tipo Sedan</returns>
-        public override sealed string Mostrar()
+        public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("SEDAN");
-            sb.AppendLine(base.Mostrar());
-            sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
+            sb.Append(base.Mostrar());
             sb.AppendLine("TIPO : " + this.tipo);
             sb.AppendLine("");
             sb.AppendLine("---------------------");
