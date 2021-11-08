@@ -66,35 +66,6 @@ namespace PruebaUnitaria_Entidades
 
 
         /// <summary>
-        /// Compare To realiza comparaciones en base al atributo ID de Producto
-        /// </summary>
-        [TestMethod]
-        public void TestCompareToLessThanZero()
-        {
-            MercadoLibre m1 = new MercadoLibre("50", "World War Z PS4", 4500, 4, "Nuevo", "Activo", "Premium");
-            MercadoLibre m2 = new MercadoLibre("50", "Spyro PS4", 6500, 4, "Nuevo", "Activo", "Premium");
-
-            Assert.AreEqual(1, m1.CompareTo(m2));
-        }
-        [TestMethod]
-        public void TestCompareToZero()
-        {
-            MercadoLibre m1 = new MercadoLibre("487", "Spyro PS4", 4500, 4, "Nuevo", "Activo", "Gratuita");
-            MercadoLibre m2 = new MercadoLibre("123", "Spyro PS4", 4500, 4, "Nuevo", "Activo", "Gratuita");
-
-            Assert.AreEqual(0, m1.CompareTo(m2));
-        }
-        [TestMethod]
-        public void TestCompareToGreatherThanZero()
-        {
-            MercadoLibre m1 = new MercadoLibre("50", "Cod Modern Warfare PS4", 4500, 4, "Nuevo", "Activo", "Gratuita");
-            MercadoLibre m2 = new MercadoLibre("50", "Hitman 3 PS4", 6500, 4, "Nuevo", "Activo", "Gratuita");
-
-            Assert.AreEqual(-1, m1.CompareTo(m2));
-        }
-
-
-        /// <summary>
         /// GetHasCode Obtiene el Has Code del atributo ID de Producto
         /// </summary>
         [TestMethod]
@@ -105,6 +76,76 @@ namespace PruebaUnitaria_Entidades
             int has = m2.GetHashCode();
 
             Assert.IsTrue(has == "50".GetHashCode());
+        }
+
+        /// <summary>
+        /// La propiedad EstadoText convierte el texto ingresado al enumerado correspondiente
+        /// </summary>
+        [TestMethod]
+        public void TestPropiedadEstadoTrue()
+        {
+            MercadoLibre m1 = new MercadoLibre("123", "Spyro PS4", 4500, 4, "Usado", "Activa", "Gratuita");
+
+            Assert.IsTrue(m1.Estado == Producto.EEstado.Activa.ToString());
+        }
+
+        /// <summary>
+        /// En caso de que no se identifique el esatdo ingresada se establece como EEstado.Ninguno
+        /// </summary>
+        [TestMethod]
+        public void TestPropiedadEstadoFalse()
+        {
+            MercadoLibre m1 = new MercadoLibre("123", "Spyro PS4", 4500, 4, "Usado", "Atibo", "Gratuita");
+
+            Assert.IsTrue(m1.Estado == Producto.EEstado.Ninguno.ToString());
+        }
+
+
+
+        /// <summary>
+        /// La propiedad CondicionTexto convierte el texto ingresado al enumerado correspondiente
+        /// </summary>
+        [TestMethod]
+        public void TestPropiedadCondicionTrue()
+        {
+            MercadoLibre m1 = new MercadoLibre("123", "Spyro PS4", 4500, 4, "Usado", "Activa", "Gratuita");
+
+            Assert.IsTrue(m1.Condicion == Producto.ECondicion.Usado.ToString());
+        }
+
+        /// <summary>
+        /// En caso de que no se identifique la condicion ingresada se establece como ECondicion.Ninguno
+        /// </summary>
+        [TestMethod]
+        public void TestPropiedadCondicionFalse()
+        {
+            MercadoLibre m1 = new MercadoLibre("123", "Spyro PS4", 4500, 4, "Uzado", "Atibo", "Gratuita");
+
+            Assert.IsTrue(m1.Condicion == Producto.ECondicion.Ninguno.ToString());
+        }
+
+
+
+        /// <summary>
+        /// La propiedad TipoPublicacionTexto convierte el texto ingresado al enumerado correspondiente
+        /// </summary>
+        [TestMethod]
+        public void TestPropiedadTipoPublicacionTrue()
+        {
+            MercadoLibre m1 = new MercadoLibre("123", "Spyro PS4", 4500, 4, "Usado", "Activa", "Gratuita");
+
+            Assert.IsTrue(m1.TipoPublicacion == Producto.ETipoPublicacion.Gratuita.ToString());
+        }
+
+        /// <summary>
+        /// En caso de que no se identifique la condicion ingresada se establece como ETipoPublicacion.Clasica
+        /// </summary>
+        [TestMethod]
+        public void TestPropiedadTipoPubliacacionFalse()
+        {
+            MercadoLibre m1 = new MercadoLibre("123", "Spyro PS4", 4500, 4, "Uzado", "Atibo", "Gratuitaaa");
+
+            Assert.IsTrue(m1.TipoPublicacion == Producto.ETipoPublicacion.Clasica.ToString());
         }
     }
 }

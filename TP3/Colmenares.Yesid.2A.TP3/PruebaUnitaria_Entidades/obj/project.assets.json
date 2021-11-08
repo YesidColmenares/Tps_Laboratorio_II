@@ -6116,8 +6116,8 @@
     },
     "Entidades/1.0.0": {
       "type": "project",
-      "path": "../../../Tps_Laboratorio_II/TP3/Colmenares.Yesid.2A.TP3/Entidades/Entidades.csproj",
-      "msbuildProject": "../../../Tps_Laboratorio_II/TP3/Colmenares.Yesid.2A.TP3/Entidades/Entidades.csproj"
+      "path": "../Entidades/Entidades.csproj",
+      "msbuildProject": "../Entidades/Entidades.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6136,11 +6136,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Yesid\\Desktop\\TP3_V02\\Colmenares.Yesid.2A.TP3\\PruebaUnitaria_Entidades\\PruebaUnitaria_Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP3\\Colmenares.Yesid.2A.TP3\\PruebaUnitaria_Entidades\\PruebaUnitaria_Entidades.csproj",
       "projectName": "PruebaUnitaria_Entidades",
-      "projectPath": "C:\\Users\\Yesid\\Desktop\\TP3_V02\\Colmenares.Yesid.2A.TP3\\PruebaUnitaria_Entidades\\PruebaUnitaria_Entidades.csproj",
+      "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP3\\Colmenares.Yesid.2A.TP3\\PruebaUnitaria_Entidades\\PruebaUnitaria_Entidades.csproj",
       "packagesPath": "C:\\Users\\Yesid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yesid\\Desktop\\TP3_V02\\Colmenares.Yesid.2A.TP3\\PruebaUnitaria_Entidades\\obj\\",
+      "outputPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP3\\Colmenares.Yesid.2A.TP3\\PruebaUnitaria_Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -30,8 +30,8 @@
   "libraries": {
     "BControlesDeUsuario/1.0.0": {
       "type": "project",
-      "path": "../../../../TP3_V02/Colmenares.Yesid.2A.TP3/BControlesDeUsuario/BControlesDeUsuario.csproj",
-      "msbuildProject": "../../../../TP3_V02/Colmenares.Yesid.2A.TP3/BControlesDeUsuario/BControlesDeUsuario.csproj"
+      "path": "../BControlesDeUsuario/BControlesDeUsuario.csproj",
+      "msbuildProject": "../BControlesDeUsuario/BControlesDeUsuario.csproj"
     },
     "Entidades/1.0.0": {
       "type": "project",
@@ -77,8 +77,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Yesid\\Desktop\\TP3_V02\\Colmenares.Yesid.2A.TP3\\BControlesDeUsuario\\BControlesDeUsuario.csproj": {
-              "projectPath": "C:\\Users\\Yesid\\Desktop\\TP3_V02\\Colmenares.Yesid.2A.TP3\\BControlesDeUsuario\\BControlesDeUsuario.csproj"
+            "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP3\\Colmenares.Yesid.2A.TP3\\BControlesDeUsuario\\BControlesDeUsuario.csproj": {
+              "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP3\\Colmenares.Yesid.2A.TP3\\BControlesDeUsuario\\BControlesDeUsuario.csproj"
             },
             "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP3\\Colmenares.Yesid.2A.TP3\\Entidades\\Entidades.csproj": {
               "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP3\\Colmenares.Yesid.2A.TP3\\Entidades\\Entidades.csproj"

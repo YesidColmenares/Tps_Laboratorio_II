@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Entidades;
+using System.Collections.Generic;
 
 namespace PruebaUnitaria_Entidades
 {
@@ -14,7 +15,7 @@ namespace PruebaUnitaria_Entidades
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestObtenerIndexNull()
         {
-            Deposito<MercadoLibre> d = new Deposito<MercadoLibre>("Videojuegos Argentina");
+            Deposito<Producto> d = new Deposito<Producto>();
 
             d.ObtenerIndex(null);
         }
@@ -25,7 +26,7 @@ namespace PruebaUnitaria_Entidades
         [TestMethod]
         public void TestObtenerIndexNoExistente()
         {
-            Deposito<MercadoLibre> d = new Deposito<MercadoLibre>("Videojuegos Argentina");
+            Deposito<Producto> d = new Deposito<Producto>();
             MercadoLibre ml = new MercadoLibre("4053", "Dualsense Blanco PS5", 12500, 1, "Usado","Activo", "Clasica");
 
             Assert.AreEqual(-1, d.ObtenerIndex(ml));
@@ -37,7 +38,7 @@ namespace PruebaUnitaria_Entidades
         [TestMethod]
         public void TestGetProductoExistente()
         {
-            Deposito<MercadoLibre> d = new Deposito<MercadoLibre>("Videojuegos Argentina");
+            Deposito<Producto> d = new Deposito<Producto>();
             MercadoLibre ml = new MercadoLibre("4053", "Dualsense Blanco PS5", 12500, 1, "Nuevo", "Activo", "Clasica");
 
             d.Agregar(ml);
@@ -52,7 +53,7 @@ namespace PruebaUnitaria_Entidades
         [TestMethod]
         public void TestAddDepositoTrue()
         {
-            Deposito<MercadoLibre> d = new Deposito<MercadoLibre>("Videojuegos Argentina");
+            Deposito<Producto> d = new Deposito<Producto>();
             MercadoLibre ml = new MercadoLibre("4053", "Dualsense Blanco PS5", 12500, 1, "Nuevo" ,"Activo", "Clasica");
 
             d.Agregar(ml);
@@ -66,7 +67,7 @@ namespace PruebaUnitaria_Entidades
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestAddDepositoNull()
         {
-            Deposito<MercadoLibre> d = new Deposito<MercadoLibre>("Videojuegos Argentina");
+            Deposito<Producto> d = new Deposito<Producto>();
             MercadoLibre ml = new MercadoLibre("4053", "Dualsense Blanco PS5", 12500, 5, "Usado","Activo", "Clasica");
 
             d.Agregar(null);
@@ -77,9 +78,9 @@ namespace PruebaUnitaria_Entidades
         /// </summary>
         [TestMethod]
         [ExpectedException(typeof(DepositoExistException))]
-        public void TestAddDepositoClaveRepetida()
+        public void TestAddDepositoProductoRepetido()
         {
-            Deposito<MercadoLibre> d = new Deposito<MercadoLibre>("Videojuegos Argentina");
+            Deposito<Producto> d = new Deposito<Producto>();
             MercadoLibre ml1 = new MercadoLibre("4053", "Dualsense Blanco PS5", 12500, 1, "Usado","Activo", "Clasica");
             MercadoLibre ml2 = new MercadoLibre("4053", "Dualsense Blanco PS5", 12500, 1, "Usado", "Activo", "Clasica");
 
@@ -95,7 +96,7 @@ namespace PruebaUnitaria_Entidades
         [TestMethod]
         public void TestRemoveDepositoTrue()
         {
-            Deposito<MercadoLibre> d = new Deposito<MercadoLibre>("Videojuegos Argentina");
+            Deposito<Producto> d = new Deposito<Producto>();
             MercadoLibre ml = new MercadoLibre("4053", "Dualsense Blanco PS5", 12500, 1, "Usado","Activo", "Premium");
 
             d.Agregar(ml);
@@ -109,7 +110,7 @@ namespace PruebaUnitaria_Entidades
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestRemoveDepositoNull()
         {
-            Deposito<MercadoLibre> d = new Deposito<MercadoLibre>("Videojuegos Argentina");
+            Deposito<Producto> d = new Deposito<Producto>();
             MercadoLibre ml = new MercadoLibre("4053", "Dualsense Blanco PS5", 12500, 1, "Usado", "Activo", "Premium");
 
             d.Agregar(ml);
@@ -123,7 +124,7 @@ namespace PruebaUnitaria_Entidades
         [ExpectedException(typeof(DepositoNotExistException))]
         public void TestRemoveDepositoNoExistente()
         {
-            Deposito<MercadoLibre> d = new Deposito<MercadoLibre>("Videojuegos Argentina");
+            Deposito<Producto> d = new Deposito<Producto>();
 
             MercadoLibre ml = new MercadoLibre("4053", "Dualsense Blanco PS5", 12500, 1, "Usado","Activo", "Premium");
             MercadoLibre ml2 = new MercadoLibre("1254", "Dualsense Rojo PS5", 12500, 1, "Nuevo","Activo", "Premium");
@@ -139,7 +140,7 @@ namespace PruebaUnitaria_Entidades
         [TestMethod]
         public void TestContieneTrue()
         {
-            Deposito<MercadoLibre> d = new Deposito<MercadoLibre>("Videojuegos Argentina");
+            Deposito<Producto> d = new Deposito<Producto>();
 
             MercadoLibre ml = new MercadoLibre("4053", "Dualsense Blanco PS5", 12500, 1, "Nuevo", "Activo", "Premium");
             MercadoLibre ml2 = new MercadoLibre("4053", "Dualsense Blanco PS5", 12500, 1, "Nuevo", "Activo", "Premium");
@@ -155,7 +156,7 @@ namespace PruebaUnitaria_Entidades
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestContieneNull()
         {
-            Deposito<MercadoLibre> d = new Deposito<MercadoLibre>("Videojuegos Argentina");
+            Deposito<Producto> d = new Deposito<Producto>();
             MercadoLibre ml = new MercadoLibre("4053", "Dualsense Blanco PS5", 12500, 1, "Nuevo","Activo", "Premium");
 
             d.Agregar(ml);
@@ -168,7 +169,7 @@ namespace PruebaUnitaria_Entidades
         [TestMethod]
         public void TestPropiedadCantidadProductos()
         {
-            Deposito<MercadoLibre> d = new Deposito<MercadoLibre>("Videojuegos Argentina");
+            Deposito<Producto> d = new Deposito<Producto>();
 
             MercadoLibre ml1 = new MercadoLibre("4584", "Dualsense Blanco PS5", 12500, 1, "Usado","Activo", "Premium");
             MercadoLibre ml2 = new MercadoLibre("4053", "Dualsense Negro PS5", 12500, 1, "Reacondicionado", "Activo", "Premium");
@@ -185,7 +186,7 @@ namespace PruebaUnitaria_Entidades
         [TestMethod]
         public void TestLimpiar()
         {
-            Deposito<MercadoLibre> d = new Deposito<MercadoLibre>("Videojuegos Argentina");
+            Deposito<Producto> d = new Deposito<Producto>();
             MercadoLibre ml1 = new MercadoLibre("4584", "Dualsense Blanco PS5", 12500, 1, "Usado","Activo", "Premium");
             MercadoLibre ml2 = new MercadoLibre("4053", "Dualsense Negro PS5", 12500, 1, "Nuevo","Activo", "Premium");
 
@@ -194,6 +195,36 @@ namespace PruebaUnitaria_Entidades
             d.Limpiar();
 
             Assert.AreEqual(0, d.CantidadProductos);
+        }
+
+        /// <summary>
+        /// Remplaza un producto por uno que tenga el mismo ID
+        /// </summary>
+        [TestMethod]
+        public void TestRemplazarTrue()
+        {
+            Deposito<Producto> d = new Deposito<Producto>();
+            MercadoLibre ml1 = new MercadoLibre("4584", "Dualsense Blanco PS5", 12500, 1, "Usado", "Activo", "Premium");
+            MercadoLibre ml2 = new MercadoLibre("4584", "Dualsense Negro PS5", 12500, 1, "Nuevo", "Activo", "Premium");
+
+            d.Agregar(ml1);
+
+            Assert.IsTrue(d.Remplazar(ml2));
+        }
+
+
+        /// <summary>
+        /// Si un producto no existe en el deposito lanza la excepcion DepositoNotExistException
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(DepositoNotExistException))]
+        public void TestRemplazarNull()
+        {
+            Deposito<Producto> d = new Deposito<Producto>();
+            MercadoLibre ml1 = new MercadoLibre("4584", "Dualsense Blanco PS5", 12500, 1, "Usado", "Activo", "Premium");
+            MercadoLibre ml2 = new MercadoLibre("4584", "Dualsense Negro PS5", 12500, 1, "Nuevo", "Activo", "Premium");
+
+            Assert.IsTrue(d.Remplazar(ml2));
         }
     }
 }
