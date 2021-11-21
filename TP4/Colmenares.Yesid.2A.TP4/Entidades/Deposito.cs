@@ -167,7 +167,7 @@ namespace Entidades
 
             if (this.Contiene(t))
             {
-                if (this.Eliminar(t))
+                if (this.productos.Remove(t))
                 {
                     this.Agregar(t);
                     valor = true;
