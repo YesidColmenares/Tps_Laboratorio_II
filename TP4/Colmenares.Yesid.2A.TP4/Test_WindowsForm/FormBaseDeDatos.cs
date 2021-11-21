@@ -9,7 +9,7 @@ namespace Test_WindowsForm
     {
         //CONSTRUCTOR
         /// <summary>
-        /// Constructor, se le pasa por parametro el deposito, solo por si el usuario cargo antes una lista de productos
+        /// Constructor
         /// </summary>
         /// <param name="deposito">Deposito de productos</param>
         public FormBaseDeDatos(Deposito<Producto> deposito)
