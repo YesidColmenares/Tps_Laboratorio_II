@@ -3,16 +3,30 @@
   <Class Name="Entidades.Deposito&lt;T&gt;">
     <Position X="3.5" Y="1" Width="3" />
     <TypeIdentifier>
-      <HashCode>QAIAACCQQARAAABAQAAACDAAAgQAQEAAAIIAEAAAAAA=</HashCode>
+      <HashCode>QCIAACSQQARAgARAQAAICDAAAgQAQEAEAIIAEAAAAAA=</HashCode>
       <FileName>Deposito.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Entidades.Archivo">
-    <Position X="2.5" Y="7.5" Width="5" />
+    <Position X="9.5" Y="6.25" Width="5" />
     <TypeIdentifier>
       <HashCode>AgQAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Archivo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Sql">
+    <Position X="9.5" Y="1" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAQAAQAEAAACAABAAAEAAQAAAAAAAAAAAgQAAA=</HashCode>
+      <FileName>Sql.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.SqlExtension">
+    <Position X="9.5" Y="4.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>SqlExtension.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Entidades.IGestionDeposito&lt;T&gt;">
@@ -44,7 +58,7 @@
     </TypeIdentifier>
   </Interface>
   <Enum Name="Entidades.EPlataforma">
-    <Position X="0.5" Y="7.5" Width="1.5" />
+    <Position X="6.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>EPlataforma.cs</FileName>
