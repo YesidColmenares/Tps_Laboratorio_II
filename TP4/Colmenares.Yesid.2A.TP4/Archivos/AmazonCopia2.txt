@@ -1,7 +1,0 @@
-﻿154487,Consola Xbox Series X,100000,2,Nuevo,Activa,Gratuita
-4564,Consola PS5 Fisica ,135000,5,Nuevo,Activa,Gratuita
-9541,Consola Nintendo Switch Oled,80000,1,Nuevo,Inactiva,Premium
-6243,Joystick Xbox Series Rojo,12500,7,Nuevo,Activa,Gratuita
-59875,Headset Pulse 3D Sony PS5,21000,10,Reacondicionado,Activa,Clasica
-1423,Dualsense PS5 Negro ,10000,0,Usado,Activa,Premium
-598745,Mouse HyperX Dark Wired,6500,5,Ninguno,Activa,Gratuita

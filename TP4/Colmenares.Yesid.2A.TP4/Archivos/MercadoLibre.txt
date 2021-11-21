@@ -1,8 +1,0 @@
-﻿369,SuperMarioWorld,12000,0,Nuevo,Activa,Clasica
-787,Crash Team Racing,8400,2,Nuevo,Activa,Premium
-951,Need For Speed Heat,6600,0,Nuevo,Inactiva,Clasica
-456,Joystick Blanco PS5,15000,5,Nuevo,Activa,Gratuita
-623,Spiderman Goty,4800,7,Nuevo,Ninguno,Premium
-258,Jurassic World,3000,1,Usado,Activa,Premium
-123,Marvel Avengers PS4,12500,2,Reacondicionado,Activa,Premium
-45876,Crash Trilogy PS4,7500,0,Ninguno,Inactiva,Premium
