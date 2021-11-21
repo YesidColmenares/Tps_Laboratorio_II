@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iSVALkiTETgtsRpLFqKxIYMpguGRgQgg94//KFb/s383yhWFEzhUmccivXd6zj6vXGLBcPvAE5luokrEhPW/4A==",
+  "dgSpecHash": "smTxHNGYVmF02sLQ9UUK/2ky8hIpaWBJjRFuWSfWM+U2u7rgZ94gdXcjzWsZQz2ytHVFjHSaGgZI6oYsV+LYxA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP3\\Test_Consola\\Test_Consola.csproj",
+  "projectFilePath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Test_Consola\\Test_Consola.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yesid\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Yesid\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

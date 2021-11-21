@@ -41,10 +41,8 @@ namespace Test_WindowsForm
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serializacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.serializacionJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serializarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serializacionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.serializacionJSONToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cmbPlataforma = new System.Windows.Forms.ComboBox();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.pnlInformes = new System.Windows.Forms.Panel();
@@ -166,8 +164,7 @@ namespace Test_WindowsForm
             // abrirToolStripMenuItem
             // 
             this.abrirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.serializacionToolStripMenuItem,
-            this.serializacionJSONToolStripMenuItem});
+            this.serializacionToolStripMenuItem});
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
             this.abrirToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.abrirToolStripMenuItem.Text = "Abrir";
@@ -176,21 +173,14 @@ namespace Test_WindowsForm
             // 
             this.serializacionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("serializacionToolStripMenuItem.Image")));
             this.serializacionToolStripMenuItem.Name = "serializacionToolStripMenuItem";
-            this.serializacionToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.serializacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.serializacionToolStripMenuItem.Text = "Serializacion XML";
             this.serializacionToolStripMenuItem.Click += new System.EventHandler(this.serializacionToolStripMenuItemCargar_Click);
-            // 
-            // serializacionJSONToolStripMenuItem
-            // 
-            this.serializacionJSONToolStripMenuItem.Name = "serializacionJSONToolStripMenuItem";
-            this.serializacionJSONToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.serializacionJSONToolStripMenuItem.Text = "Serializacion JSON";
             // 
             // serializarToolStripMenuItem
             // 
             this.serializarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.serializacionToolStripMenuItem1,
-            this.serializacionJSONToolStripMenuItem1});
+            this.serializacionToolStripMenuItem1});
             this.serializarToolStripMenuItem.Name = "serializarToolStripMenuItem";
             this.serializarToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.serializarToolStripMenuItem.Text = "Guardar";
@@ -199,15 +189,9 @@ namespace Test_WindowsForm
             // 
             this.serializacionToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("serializacionToolStripMenuItem1.Image")));
             this.serializacionToolStripMenuItem1.Name = "serializacionToolStripMenuItem1";
-            this.serializacionToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.serializacionToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.serializacionToolStripMenuItem1.Text = "Serializacion XML";
             this.serializacionToolStripMenuItem1.Click += new System.EventHandler(this.serializacionToolStripMenuItemGuardar_Click);
-            // 
-            // serializacionJSONToolStripMenuItem1
-            // 
-            this.serializacionJSONToolStripMenuItem1.Name = "serializacionJSONToolStripMenuItem1";
-            this.serializacionJSONToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
-            this.serializacionJSONToolStripMenuItem1.Text = "Serializacion JSON";
             // 
             // cmbPlataforma
             // 
@@ -517,8 +501,6 @@ namespace Test_WindowsForm
         private System.Windows.Forms.SaveFileDialog saveFile;
         private System.Windows.Forms.ToolStripMenuItem serializacionToolStripMenuItem1;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.ToolStripMenuItem serializacionJSONToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem serializacionJSONToolStripMenuItem1;
         private BControlesDeUsuario.UCButtonPrincipal btnAnalisis;
         private BControlesDeUsuario.UCButtonPrincipal btnSalir;
         private BControlesDeUsuario.UCButtonPrincipal ucButtonPrincipal2;

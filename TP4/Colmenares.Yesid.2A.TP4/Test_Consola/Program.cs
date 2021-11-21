@@ -62,30 +62,6 @@ namespace Test_Consola
             Program.LimpioElDeposito(deposito);
 
 
-            //CARGO UNA LISTA DE PRODUCTOS DESDE UN ARCHIVO TXT
-            Console.WriteLine("******************************************************************");
-            Console.WriteLine("CARGO UN LISTA DE PRODUCTOS MERCADO LIBRE DESDE UN ARCHIVO TXT\n");
-            deposito = Program.CargarListaDeProductosMercadoLibreDesdeArchivoTXT(pathML, deposito);
-
-
-            //GUARDO UNA LISTA DE PRODUCTOS EN UN ARCHIVO TXT
-            Console.WriteLine("******************************************************************");
-            Console.WriteLine("GUARDO UNA LISTA DE PRODUCTOS MERCADOLIBRE EN UN ARCHIVO TXT\n");
-            Program.GuardarListaDeProductosMercadoLibreArchivoTXT(pathMLGuardar, deposito.Productos);
-
-
-            //CARGO UN LISTA DE PRODUCTOS DESDE UN ARCHIVO TXT
-            Console.WriteLine("******************************************************************");
-            Console.WriteLine("CARGO UN LISTA DE PRODUCTOS AMAZON DESDE UN ARCHIVO TXT\n");
-            deposito = Program.CargarListaDeProductosAmazonDesdeArchivoTXT(pathAZ, deposito);
-
-
-            //GUARDO UNA LISTA DE PRODUCTOS EN UN ARCHIVO TXT
-            Console.WriteLine("******************************************************************");
-            Console.WriteLine("GUARDO UNA LISTA DE PRODUCTOS AMAZON EN UN ARCHIVO TXT\n");
-            Program.GuardarListaDeProductosAmazonArchivoTXT(pathAZGuardar, deposito.Productos);
-
-
             //CARGO UN LISTA DE PRODUCTOS DESDE UN ARCHIVO SERIALIZADO XML
             Console.WriteLine("******************************************************************");
             Console.WriteLine("CARGO UNA LISTA DE PRODUCTOS DESDE UN ARCHIVO SERIALIZADO XML\n");
@@ -202,41 +178,6 @@ namespace Test_Consola
             }
         }
 
-
-
-        public static Deposito<Producto> CargarListaDeProductosMercadoLibreDesdeArchivoTXT(string path, Deposito<Producto> deposito)
-        {
-            List<Producto> listaProductos = Archivo.CargarTxt(path, EPlataforma.MercadoLibre);
-
-            foreach (Producto item in listaProductos)
-            {
-                Console.WriteLine(item);
-            }
-
-            deposito.AgregarLista(listaProductos);
-
-            return deposito;
-        }
-
-        public static Deposito<Producto> CargarListaDeProductosAmazonDesdeArchivoTXT(string path, Deposito<Producto> deposito)
-        {
-            List<Producto> listaProductos = Archivo.CargarTxt(path, EPlataforma.Amazon);
-
-            foreach (Producto item in listaProductos)
-            {
-                Console.WriteLine(item);
-            }
-
-            Console.WriteLine("AGREGO LA LISTA DE AMAZON AL DEPOSITO \n");
-            deposito.AgregarLista(listaProductos);
-
-            foreach (Producto item in deposito.Productos)
-            {
-                Console.WriteLine(item);
-            }
-            return deposito;
-        }
-
         public static Deposito<Producto> CargarListaDeProductosDesdeArchivoSerializadoXML(string path, Deposito<Producto> deposito)
         {
             List<Producto> listaProductos = Archivo.CargarXml(path, typeof(List<Producto>));
@@ -250,18 +191,6 @@ namespace Test_Consola
             }
 
             return deposito;
-        }
-
-
-
-        public static void GuardarListaDeProductosMercadoLibreArchivoTXT(string path, List<Producto> listaProductos)
-        {
-            Archivo.GuardarTxt(path, listaProductos, EPlataforma.MercadoLibre);
-        }
-
-        public static void GuardarListaDeProductosAmazonArchivoTXT(string path, List<Producto> listaProductos)
-        {
-            Archivo.GuardarTxt(path, listaProductos, EPlataforma.Amazon);
         }
 
         public static void GuardarListaDeProductosArchivoSerializadoXML(string path, List<Producto> listaProductos)

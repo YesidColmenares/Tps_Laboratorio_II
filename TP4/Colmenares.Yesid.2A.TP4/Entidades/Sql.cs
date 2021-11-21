@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entidades
 {
@@ -32,39 +29,6 @@ namespace Entidades
 
 
         //METODOS
-        /// <summary>
-        /// Realiza una prueba de conexion a la base de datos
-        /// </summary>
-        /// <param name="servidor">Nombre del servidor</param>
-        /// <param name="nombreBaseDatos">Nombre de la base de datos</param>
-        /// <returns>Retorna true si se pudo establecer conexion, false lo contrario</returns>
-        public static bool ProbarConexion(string servidor, string nombreBaseDatos)
-        {
-            bool valor = true;
-            SqlConnection connection;
-
-            try
-            {
-                if (servidor != "" && nombreBaseDatos != "")
-                {
-                    using (connection = new SqlConnection($"Server={servidor};Database={nombreBaseDatos};Trusted_Connection=True;"))
-                    {
-                        connection.Open();
-                    }
-                }
-                else
-                {
-                    valor = false;
-                }
-            }
-            catch (Exception)
-            {
-                valor = false;
-            }
-
-            return valor;
-        }
-
         /// <summary>
         /// Obtiene la lista de productos que estan en esa tabla y base de daos
         /// </summary>
@@ -108,13 +72,12 @@ namespace Entidades
                     this.reader.Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                l = null;
             }
             return l;
         }
-
         /// <summary>
         /// Agrega un producto a la base de datos
         /// </summary>
@@ -150,7 +113,6 @@ namespace Entidades
 
             return valor;
         }
-
         /// <summary>
         /// Modifica un producto de la base de datos
         /// </summary>
@@ -203,7 +165,6 @@ namespace Entidades
 
             return valor;
         }
-
         /// <summary>
         /// Elimina un producto de la base de datos
         /// </summary>
@@ -241,12 +202,10 @@ namespace Entidades
         /// Servidor de la base de datos
         /// </summary>
         public string Servidor { get; set; }
-
         /// <summary>
         /// Nombre de la base de datos
         /// </summary>
         public string NombreBaseDatos { get; set; }
-
         /// <summary>
         /// Tabla de la base de datos
         /// </summary>

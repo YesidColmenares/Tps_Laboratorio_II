@@ -498,11 +498,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP3\\Test_WindowsForm\\Test_WindowsForm.csproj",
+      "projectUniqueName": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Test_WindowsForm\\Test_WindowsForm.csproj",
       "projectName": "Test_WindowsForm",
-      "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP3\\Test_WindowsForm\\Test_WindowsForm.csproj",
+      "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Test_WindowsForm\\Test_WindowsForm.csproj",
       "packagesPath": "C:\\Users\\Yesid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP3\\Test_WindowsForm\\obj\\",
+      "outputPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Test_WindowsForm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -523,11 +523,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP3\\BControlesDeUsuario\\BControlesDeUsuario.csproj": {
-              "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP3\\BControlesDeUsuario\\BControlesDeUsuario.csproj"
+            "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\BControlesDeUsuario.csproj": {
+              "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\BControlesDeUsuario.csproj"
             },
-            "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP3\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP3\\Entidades\\Entidades.csproj"
+            "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj"
             }
           }
         }

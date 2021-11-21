@@ -1,8 +1,6 @@
 ﻿using Entidades;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Test_WindowsForm
@@ -10,7 +8,6 @@ namespace Test_WindowsForm
     public partial class FormBaseDeDatos : Form
     {
         //CONSTRUCTOR
-
         /// <summary>
         /// Constructor, se le pasa por parametro el deposito, solo por si el usuario cargo antes una lista de productos
         /// </summary>
@@ -34,6 +31,7 @@ namespace Test_WindowsForm
             {
                 item.Visible = false;
             }
+
             this.lblTitulo.Text = titulo;
             c.Visible = true;
         }
@@ -45,6 +43,7 @@ namespace Test_WindowsForm
         private void LlenarListBox(ListBox c, List<Producto> lista)
         {
             c.Items.Clear();
+
             foreach (Producto item in lista)
             {
                 c.Items.Add(item);
@@ -73,7 +72,6 @@ namespace Test_WindowsForm
         {
             MessageBox.Show($"Eliminaste el producto ID: {id}, Nombre: {nombre}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
         /// <summary>
         /// Captura el evento que es generado cuando se crea un producto sin cantidad de stock,
         /// avisa en un MessageBox
@@ -81,6 +79,38 @@ namespace Test_WindowsForm
         private void Deposito_CantidadCeroEvent()
         {
             MessageBox.Show("Agregaste un producto con cantidad: 0", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+        /// <summary>
+        /// Me permite establecer una conexion con la base de datos para probar que la conexion sea exitosa 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnEstablecerConexion_Evento(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.Sql.ProbarConexion(this.txtNombreServidor.Text, this.txtNombreBaseDatos.Text))
+                {
+                    this.pgrssBarEstadoConexion.EstadoBarra = true;
+                    this.txtNombreBaseDatos.Enabled = false;
+                    this.txtNombreServidor.Enabled = false;
+                    this.grpGestion.Visible = true;
+                    this.Deposito.AgregarLista(this.Sql.ObtenerLista("Amazon"));
+                    this.Deposito.AgregarLista(this.Sql.ObtenerLista("MercadoLibre"));
+                }
+                else
+                {
+                    throw new Exception("Error al realizar la conexion con la base de datos");
+                }
+            }
+            catch (DepositoListZeroAggregateException exception)
+            {
+                MessageBox.Show($"{exception.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"{exception.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -101,7 +131,6 @@ namespace Test_WindowsForm
             this.grpGestion.Visible = false;
             this.ActivarBotonesGestion(false);
         }
-
         /// <summary>
         /// Agrega un producto al deposito y a la base de datos
         /// </summary>
@@ -126,38 +155,12 @@ namespace Test_WindowsForm
                 {
                     MessageBox.Show($"{exception.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-        }
-
-        /// <summary>
-        /// Me permite establecer una conexion con la base de datos para probar que la conexion sea exitosa 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnEstablecerConexion_Evento(object sender, EventArgs e)
-        {
-            try
-            {
-                if (Sql.ProbarConexion(this.txtNombreServidor.Text, this.txtNombreBaseDatos.Text))
+                catch (Exception exception)
                 {
-                    this.pgrssBarEstadoConexion.EstadoBarra = true;
-                    this.txtNombreBaseDatos.Enabled = false;
-                    this.txtNombreServidor.Enabled = false;
-                    this.grpGestion.Visible = true;
-                    this.Deposito.AgregarLista(this.Sql.ObtenerLista("Amazon"));
-                    this.Deposito.AgregarLista(this.Sql.ObtenerLista("MercadoLibre"));
-                }
-                else
-                {
-                    throw new Exception("Error al realizar la conexion con la base de datos");
+                    MessageBox.Show($"{exception.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception exception)
-            {
-                MessageBox.Show($"{exception.Message}","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
-
         /// <summary>
         /// Obtiene la lista de los productos que estan en el deposito
         /// </summary>
@@ -175,8 +178,11 @@ namespace Test_WindowsForm
                 this.PlataformaActual = (EPlataforma)Enum.Parse(typeof(EPlataforma), this.txtNombreTabla.Text);
                 this.LlenarListBox(this.lstBoxMostrar, lista);
             }
+            else
+            {
+                MessageBox.Show($"Tabla no existe o el campo esta vacio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
         /// <summary>
         /// Modifica un producto de la base de datos y del deposito
         /// </summary>
@@ -187,7 +193,6 @@ namespace Test_WindowsForm
             this.ActivarYEstablecerTitulo(this.lstBoxModificar, "MODIFICAR PRODUCTOS");
             this.LlenarListBox(this.lstBoxModificar, this.Sql.ObtenerLista(this.txtNombreTabla.Text));
         }
-
         /// <summary>
         /// Elimina un producto de la base de datos y del deposito
         /// </summary>
@@ -198,7 +203,6 @@ namespace Test_WindowsForm
             this.ActivarYEstablecerTitulo(this.lstBoxEliminar, "ELIMINAR PRODUCTOS");
             this.LlenarListBox(this.lstBoxEliminar, this.Sql.ObtenerLista(this.txtNombreTabla.Text));
         }
-
         /// <summary>
         /// Me permite cambiar de tabla en la base de datos
         /// </summary>
@@ -207,9 +211,10 @@ namespace Test_WindowsForm
         private void btnCambiarTabla_Click(object sender, EventArgs e)
         {
             this.ActivarBotonesGestion(false);
+            this.lstBoxMostrar.Items.Clear();
+            this.ActivarYEstablecerTitulo(this.lstBoxMostrar, "CAMBIAR TABLA");
             this.txtNombreTabla.Enabled = true;
         }
-
         /// <summary>
         /// Sale hacia el menu principal
         /// </summary>
@@ -217,8 +222,14 @@ namespace Test_WindowsForm
         /// <param name="e"></param>
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            DialogResult result = MessageBox.Show("Seguro desea salir?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
         }
+
 
         /// <summary>
         /// El producto seleccionado del ListBox es eliminado
@@ -231,24 +242,25 @@ namespace Test_WindowsForm
 
             if (seleccionado is not null)
             {
-                DialogResult dialog = MessageBox.Show("Estas seguro de querer eliminar este producto?", "ADVERTENCIA",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialog = MessageBox.Show("Estas seguro de querer eliminar este producto?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dialog == DialogResult.Yes)
                 {
-                    if (this.Sql.Eliminar(seleccionado))
+                    try
                     {
-                        this.Deposito.Eliminar(seleccionado);
-                        this.LlenarListBox(this.lstBoxEliminar, this.Sql.ObtenerLista(this.txtNombreTabla.Text));
+                        if (this.Sql.Eliminar(seleccionado))
+                        {
+                            this.Deposito.Eliminar(seleccionado);
+                        }
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show($"{exception.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
-            else
-            {
-                MessageBox.Show("Ningun producto seleccionado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            this.LlenarListBox(this.lstBoxEliminar, this.Sql.ObtenerLista(this.txtNombreTabla.Text));
         }
-
         /// <summary>
         /// El producto seleccionado del ListBox se podra modificar
         /// </summary>
@@ -267,13 +279,20 @@ namespace Test_WindowsForm
 
                 if (editar.ShowDialog() == DialogResult.OK)
                 {
-                    if (this.Sql.Modificar(editar.Producto))
+                    try
                     {
-                        this.Deposito.Remplazar(editar.Producto);
-                        this.LlenarListBox(this.lstBoxModificar, this.Sql.ObtenerLista(this.txtNombreTabla.Text));
+                        if (this.Sql.Modificar(editar.Producto))
+                        {
+                            this.Deposito.Remplazar(editar.Producto);
+                        }
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show($"{exception.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
+            this.LlenarListBox(this.lstBoxModificar, this.Sql.ObtenerLista(this.txtNombreTabla.Text));
         }
 
 
@@ -285,7 +304,6 @@ namespace Test_WindowsForm
         {
             get; set;
         }
-
         /// <summary>
         /// Guarda y retorna la plataforma actual 
         /// </summary>
@@ -293,7 +311,6 @@ namespace Test_WindowsForm
         {
             get; set;
         }
-
         /// <summary>
         /// Retorna una instancia de SQL dependiendo el servidor, la base de datos y el nombre actual de la tabla
         /// </summary>

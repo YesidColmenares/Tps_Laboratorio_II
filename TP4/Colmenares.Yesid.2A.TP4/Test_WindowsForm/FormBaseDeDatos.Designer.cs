@@ -29,6 +29,7 @@ namespace Test_WindowsForm
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBaseDeDatos));
             this.txtNombreServidor = new System.Windows.Forms.TextBox();
             this.lblNombreServidor = new System.Windows.Forms.Label();
             this.lblNombreBaseDeDatos = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@ namespace Test_WindowsForm
             this.btnCambiarTabla = new System.Windows.Forms.Button();
             this.pgrssBarEstadoConexion = new BControlesDeUsuario.UCProgressBar();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.lstBoxMostrar = new System.Windows.Forms.ListBox();
             this.lstBoxEliminar = new System.Windows.Forms.ListBox();
             this.lstBoxModificar = new System.Windows.Forms.ListBox();
             this.lblNombreTabla = new System.Windows.Forms.Label();
@@ -49,7 +51,6 @@ namespace Test_WindowsForm
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.grpGestion = new System.Windows.Forms.GroupBox();
-            this.lstBoxMostrar = new System.Windows.Forms.ListBox();
             this.grpBoxEstadoConexion.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.grpGestion.SuspendLayout();
@@ -57,7 +58,7 @@ namespace Test_WindowsForm
             // 
             // txtNombreServidor
             // 
-            this.txtNombreServidor.Location = new System.Drawing.Point(123, 16);
+            this.txtNombreServidor.Location = new System.Drawing.Point(123, 11);
             this.txtNombreServidor.Name = "txtNombreServidor";
             this.txtNombreServidor.Size = new System.Drawing.Size(187, 23);
             this.txtNombreServidor.TabIndex = 0;
@@ -65,7 +66,8 @@ namespace Test_WindowsForm
             // lblNombreServidor
             // 
             this.lblNombreServidor.AutoSize = true;
-            this.lblNombreServidor.Location = new System.Drawing.Point(7, 20);
+            this.lblNombreServidor.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombreServidor.Location = new System.Drawing.Point(7, 15);
             this.lblNombreServidor.Name = "lblNombreServidor";
             this.lblNombreServidor.Size = new System.Drawing.Size(97, 15);
             this.lblNombreServidor.TabIndex = 1;
@@ -74,7 +76,8 @@ namespace Test_WindowsForm
             // lblNombreBaseDeDatos
             // 
             this.lblNombreBaseDeDatos.AutoSize = true;
-            this.lblNombreBaseDeDatos.Location = new System.Drawing.Point(328, 19);
+            this.lblNombreBaseDeDatos.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombreBaseDeDatos.Location = new System.Drawing.Point(328, 14);
             this.lblNombreBaseDeDatos.Name = "lblNombreBaseDeDatos";
             this.lblNombreBaseDeDatos.Size = new System.Drawing.Size(126, 15);
             this.lblNombreBaseDeDatos.TabIndex = 2;
@@ -82,14 +85,14 @@ namespace Test_WindowsForm
             // 
             // txtNombreBaseDatos
             // 
-            this.txtNombreBaseDatos.Location = new System.Drawing.Point(466, 16);
+            this.txtNombreBaseDatos.Location = new System.Drawing.Point(466, 11);
             this.txtNombreBaseDatos.Name = "txtNombreBaseDatos";
             this.txtNombreBaseDatos.Size = new System.Drawing.Size(187, 23);
             this.txtNombreBaseDatos.TabIndex = 3;
             // 
             // btnEstablecerConexion
             // 
-            this.btnEstablecerConexion.Location = new System.Drawing.Point(664, 14);
+            this.btnEstablecerConexion.Location = new System.Drawing.Point(664, 9);
             this.btnEstablecerConexion.Name = "btnEstablecerConexion";
             this.btnEstablecerConexion.Size = new System.Drawing.Size(128, 27);
             this.btnEstablecerConexion.TabIndex = 4;
@@ -144,6 +147,15 @@ namespace Test_WindowsForm
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(785, 290);
             this.pnlPrincipal.TabIndex = 8;
+            // 
+            // lstBoxMostrar
+            // 
+            this.lstBoxMostrar.FormattingEnabled = true;
+            this.lstBoxMostrar.ItemHeight = 15;
+            this.lstBoxMostrar.Location = new System.Drawing.Point(3, 13);
+            this.lstBoxMostrar.Name = "lstBoxMostrar";
+            this.lstBoxMostrar.Size = new System.Drawing.Size(779, 274);
+            this.lstBoxMostrar.TabIndex = 2;
             // 
             // lstBoxEliminar
             // 
@@ -203,10 +215,10 @@ namespace Test_WindowsForm
             // 
             // lblTitulo
             // 
-            this.lblTitulo.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.lblTitulo.BackColor = System.Drawing.SystemColors.Control;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(7, 50);
+            this.lblTitulo.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblTitulo.Location = new System.Drawing.Point(7, 42);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(785, 23);
             this.lblTitulo.TabIndex = 17;
@@ -247,19 +259,12 @@ namespace Test_WindowsForm
             this.grpGestion.TabStop = false;
             this.grpGestion.Text = "Gestion";
             // 
-            // lstBoxMostrar
-            // 
-            this.lstBoxMostrar.FormattingEnabled = true;
-            this.lstBoxMostrar.ItemHeight = 15;
-            this.lstBoxMostrar.Location = new System.Drawing.Point(3, 13);
-            this.lstBoxMostrar.Name = "lstBoxMostrar";
-            this.lstBoxMostrar.Size = new System.Drawing.Size(779, 274);
-            this.lstBoxMostrar.TabIndex = 2;
-            // 
             // FormBaseDeDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(799, 466);
             this.Controls.Add(this.grpGestion);
             this.Controls.Add(this.lblTitulo);
@@ -270,6 +275,9 @@ namespace Test_WindowsForm
             this.Controls.Add(this.lblNombreBaseDeDatos);
             this.Controls.Add(this.lblNombreServidor);
             this.Controls.Add(this.txtNombreServidor);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormBaseDeDatos";
             this.Text = "Base de datos";
             this.Load += new System.EventHandler(this.FormBaseDeDatos_Load);

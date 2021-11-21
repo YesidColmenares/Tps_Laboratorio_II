@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Text.Json;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -10,39 +11,21 @@ namespace Entidades
     public class Archivo
     {
         /// <summary>
-        /// Carga un archivo txt de productos
+        /// Carga un archivo txt
         /// </summary>
         /// <param name="path">Ruta al archivo</param>
-        /// <param name="plataforma">Plataforma del producto, si es Amazon o MercadoLibre</param>
-        /// <returns>Retorna una lista de productos</returns>
+        /// <returns>Retorna el archivo leido</returns>
         /// <exception cref="ArgumentNullException">Si el path es null</exception>
         /// <exception cref="Exception">Otras excepciones</exception>
-        public static List<Producto> CargarTxt(string path, EPlataforma plataforma)
+        public static string CargarTxt(string path)
         {
-            List<Producto> listaAux = new List<Producto>();
-            string linea;
-            string[] array;
+            string txt;
 
             if (path is not null)
             {
                 using (StreamReader reader = new StreamReader(path, Encoding.UTF8))
                 {
-                    while (!reader.EndOfStream)
-                    {
-                        linea = reader.ReadLine();
-                        array = linea.Split(',');
-                        float.TryParse(array[2], out float precio);
-                        int.TryParse(array[3], out int cantidad);
-
-                        if (plataforma == EPlataforma.MercadoLibre)
-                        {
-                            listaAux.Add(new MercadoLibre(array[0], array[1], precio, cantidad, array[4], array[5], array[6]));
-                        }
-                        else if (plataforma == EPlataforma.Amazon)
-                        {
-                            listaAux.Add(new Amazon(array[0], array[1], precio, cantidad, array[4], array[5], array[6]));
-                        }
-                    }
+                    txt = reader.ReadToEnd();
                 }
             }
             else
@@ -50,17 +33,15 @@ namespace Entidades
                 throw new ArgumentNullException("Archivo","La ruta al archivo txt es null");
             }
 
-            return listaAux;
+            return txt;
         }
         /// <summary>
-        /// Guarda una lista de productos en un archivo txt
+        /// Guarda una cadena de caracteres 
         /// </summary>
         /// <param name="path">Ruta al archivo</param>
-        /// <param name="lista">La lista de productos a guardar</param>
-        /// <param name="plataforma">La plataforma del tipo de Producto a guardar</param>
         /// <exception cref="ArgumentNullException">Si el path es null</exception>
         /// <exception cref="Exception">Otras excepciones</exception>
-        public static bool GuardarTxt(string path, List<Producto> lista, EPlataforma plataforma)
+        public static bool GuardarTxt(string path, string txt)
         {
             bool valor = false;
 
@@ -68,16 +49,9 @@ namespace Entidades
             {
                 using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))
                 {
-                    foreach (Producto item in lista)
-                    {
-                        if (item.GetType().Name == plataforma.ToString())
-                        {
-                            writer.WriteLine($"{item.Id},{item.Nombre},{item.Precio},{item.Cantidad},{item.Condicion}," +
-                            $"{item.Estado},{item.TipoPublicacion}");
-                        }
-                    }
-                    valor = true;
+                    writer.Write(txt);
                 }
+                valor = true;
             }
             else
             {
@@ -89,7 +63,7 @@ namespace Entidades
 
 
         /// <summary>
-        /// Guarda y realiza una serializacion de una lista de productos
+        /// Guarda y realiza una serializacion XML de una lista de productos
         /// </summary>
         /// <param name="path">Ruta al archivo</param>
         /// <param name="lista">Lista de productos a guardar</param>
@@ -118,7 +92,7 @@ namespace Entidades
             return valor;
         }
         /// <summary>
-        /// Cargar una serializacion 
+        /// Cargar una serializacion XML
         /// </summary>
         /// <param name="path">Ruta al archivo</param>
         /// <param name="type">Tipo a deserializar</param>

@@ -26,7 +26,8 @@ namespace Test_WindowsForm
         public FormPrincipal()
         {
             InitializeComponent();
-            this.deposito = new Deposito<Producto>();       
+            this.deposito = new Deposito<Producto>();
+
         }
 
 
@@ -117,11 +118,11 @@ namespace Test_WindowsForm
         /// <summary>
         /// Carga una lista serializada 
         /// </summary>
-        private void CargarListaSerializada()
+        private void CargarListaXml()
         {
             if (this.InvokeRequired)
             {
-                DelegadoListaDeposito cargar = new DelegadoListaDeposito(this.CargarListaSerializada);
+                DelegadoListaDeposito cargar = new DelegadoListaDeposito(this.CargarListaXml);
                 this.Invoke(cargar);
             }
             else
@@ -149,11 +150,11 @@ namespace Test_WindowsForm
         /// <summary>
         /// Guarda una lista serializada
         /// </summary>
-        private void GuardarListaSerializada()
+        private void GuardarListaXml()
         {
             if (this.InvokeRequired)
             {
-                DelegadoListaDeposito cargar = new DelegadoListaDeposito(this.GuardarListaSerializada);
+                DelegadoListaDeposito cargar = new DelegadoListaDeposito(this.GuardarListaXml);
                 this.Invoke(cargar);
             }
             else
@@ -204,13 +205,13 @@ namespace Test_WindowsForm
         }
 
         /// <summary>
-        /// Boton que gestiona los productos de Mercado Libre
+        /// Genera una nueva instancia del formulario de base de datos en un segundo hilo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnGestion_Click(object sender, EventArgs e)
         {
-            Task task = new Task(() => 
+            Task task = new Task(() =>
             {
                 FormBaseDeDatos datos = new FormBaseDeDatos(this.deposito);
                 datos.ShowDialog();
@@ -226,8 +227,6 @@ namespace Test_WindowsForm
         /// <param name="e"></param>
         private void btnAnalisis_Click(object sender, EventArgs e)
         {
-            this.cmbPlataforma.Enabled = false;
-
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(this.deposito.ProductosActivosCostosos());
@@ -284,7 +283,7 @@ namespace Test_WindowsForm
         /// <param name="e"></param>
         private void serializacionToolStripMenuItemCargar_Click(object sender, EventArgs e)
         {
-            Task.Run(() => this.CargarListaSerializada());
+            Task.Run(() => this.CargarListaXml());
         }
 
         /// <summary>
@@ -294,9 +293,8 @@ namespace Test_WindowsForm
         /// <param name="e"></param>
         private void serializacionToolStripMenuItemGuardar_Click(object sender, EventArgs e)
         {
-            Task.Run(() => this.GuardarListaSerializada());
+            Task.Run(() => this.GuardarListaXml());
         }
-
 
         //EVENTOS SUB-MENU GESTION
         /// <summary>
@@ -462,7 +460,5 @@ namespace Test_WindowsForm
         {
             get; set;
         }
-
-
     }
 }
