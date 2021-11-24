@@ -293,6 +293,7 @@ namespace Test_WindowsForm
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormBaseDeDatos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Base de datos";
             this.Load += new System.EventHandler(this.FormBaseDeDatos_Load);
             this.grpBoxEstadoConexion.ResumeLayout(false);

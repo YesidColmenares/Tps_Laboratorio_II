@@ -90,7 +90,6 @@ namespace Test_WindowsForm
             {
                 if (this.Sql.ProbarConexion(this.txtNombreServidor.Text, this.txtNombreBaseDatos.Text))
                 {
-                    this.pgrssBarEstadoConexion.EstadoBarra = true;
                     this.txtNombreBaseDatos.Enabled = false;
                     this.txtNombreServidor.Enabled = false;
                     this.grpGestion.Visible = true;
@@ -175,6 +174,7 @@ namespace Test_WindowsForm
                 this.ActivarBotonesGestion(true);
                 this.PlataformaActual = (EPlataforma)Enum.Parse(typeof(EPlataforma), this.cmbDeposito.Text);
                 this.LlenarListBox(this.lstBoxMostrar, lista);
+                this.pgrssBarEstadoConexion.EstadoBarra = true;
             }
             else
             {
@@ -212,6 +212,7 @@ namespace Test_WindowsForm
             this.lstBoxMostrar.Items.Clear();
             this.ActivarYEstablecerTitulo(this.lstBoxMostrar, "CAMBIAR TABLA");
             this.cmbDeposito.Enabled = true;
+            this.pgrssBarEstadoConexion.EstadoBarra = false;
         }
         /// <summary>
         /// Sale hacia el menu principal
@@ -334,6 +335,7 @@ namespace Test_WindowsForm
                     this.groupDatosDDBB.Visible = false;
                     this.Deposito.AgregarLista(this.Sql.ObtenerLista("Amazon"));
                     this.Deposito.AgregarLista(this.Sql.ObtenerLista("MercadoLibre"));
+                    this.pgrssBarEstadoConexion.EstadoBarra = true;
                 }
                 else
                 {

@@ -6556,11 +6556,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\PruebaUnitaria_Entidades\\PruebaUnitaria_Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\PruebaUnitaria_Entidades\\PruebaUnitaria_Entidades.csproj",
       "projectName": "PruebaUnitaria_Entidades",
-      "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\PruebaUnitaria_Entidades\\PruebaUnitaria_Entidades.csproj",
+      "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\PruebaUnitaria_Entidades\\PruebaUnitaria_Entidades.csproj",
       "packagesPath": "C:\\Users\\Yesid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\PruebaUnitaria_Entidades\\obj\\",
+      "outputPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\PruebaUnitaria_Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Yesid\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6577,8 +6577,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj"
+            "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj"
             }
           }
         }

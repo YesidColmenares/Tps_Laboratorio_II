@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Test_WindowsForm\\Test_WindowsForm.csproj": {}
+    "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\Test_WindowsForm\\Test_WindowsForm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\BControlesDeUsuario.csproj": {
+    "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\BControlesDeUsuario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\BControlesDeUsuario.csproj",
+        "projectUniqueName": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\BControlesDeUsuario.csproj",
         "projectName": "BControlesDeUsuario",
-        "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\BControlesDeUsuario.csproj",
+        "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\BControlesDeUsuario.csproj",
         "packagesPath": "C:\\Users\\Yesid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\obj\\",
+        "outputPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Yesid\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,14 +61,14 @@
         }
       }
     },
-    "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\Yesid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Yesid\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -121,14 +121,14 @@
         }
       }
     },
-    "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Test_WindowsForm\\Test_WindowsForm.csproj": {
+    "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\Test_WindowsForm\\Test_WindowsForm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Test_WindowsForm\\Test_WindowsForm.csproj",
+        "projectUniqueName": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\Test_WindowsForm\\Test_WindowsForm.csproj",
         "projectName": "Test_WindowsForm",
-        "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Test_WindowsForm\\Test_WindowsForm.csproj",
+        "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\Test_WindowsForm\\Test_WindowsForm.csproj",
         "packagesPath": "C:\\Users\\Yesid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Test_WindowsForm\\obj\\",
+        "outputPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\Test_WindowsForm\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Yesid\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -145,11 +145,11 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\BControlesDeUsuario.csproj": {
-                "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\BControlesDeUsuario.csproj"
+              "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\BControlesDeUsuario.csproj": {
+                "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\BControlesDeUsuario\\BControlesDeUsuario.csproj"
               },
-              "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj"
+              "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\Entidades\\Entidades.csproj"
               }
             }
           }

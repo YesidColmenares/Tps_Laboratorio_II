@@ -220,16 +220,19 @@ namespace Test_WindowsForm
         /// <param name="e"></param>
         private void btnGestion_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Desea iniciar con una base de datos predeterminada?", "Base de datos", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Desea iniciar con una base de datos predeterminada?", "Base de datos", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-            Task task = new Task(() =>
+            if (result != DialogResult.Cancel)
             {
-                FormBaseDeDatos datos = new FormBaseDeDatos(this.deposito);
-                datos.BDPredeterminada = result == DialogResult.Yes;
-                datos.ShowDialog();
-            });
+                Task task = new Task(() =>
+                {
+                    FormBaseDeDatos datos = new FormBaseDeDatos(this.deposito);
+                    datos.BDPredeterminada = result == DialogResult.Yes;
+                    datos.ShowDialog();
+                });
 
-            task.Start();
+                task.Start();
+            }
         }
 
         /// <summary>

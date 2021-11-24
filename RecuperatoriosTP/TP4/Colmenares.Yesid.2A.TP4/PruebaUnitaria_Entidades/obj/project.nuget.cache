@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PP28wTWtG3KrCw6KeLA2E7c7OuZfudN2fAqQJb0fyRmhUx18xslAkoxe1Wob+7OyXyzZxmnCWOaYEcqpXW/2pg==",
+  "dgSpecHash": "2m+/whBh6giDgKcwkfZPZPpAdSpSiz7C34yFaFLAv6LSfxXPmOP3q2QXmqAli3A/LCRuwNJUnowR0L4wEMCwWw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\TP4\\Colmenares.Yesid.2A.TP4\\PruebaUnitaria_Entidades\\PruebaUnitaria_Entidades.csproj",
+  "projectFilePath": "C:\\Users\\Yesid\\Desktop\\Tps_Laboratorio_II\\RecuperatoriosTP\\TP4\\Colmenares.Yesid.2A.TP4\\PruebaUnitaria_Entidades\\PruebaUnitaria_Entidades.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yesid\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\Yesid\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
