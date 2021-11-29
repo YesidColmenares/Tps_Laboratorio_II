@@ -228,7 +228,10 @@ namespace Test_WindowsForm
                 {
                     FormBaseDeDatos datos = new FormBaseDeDatos(this.deposito);
                     datos.BDPredeterminada = result == DialogResult.Yes;
-                    datos.ShowDialog();
+                    if (datos.DialogResult != DialogResult.Cancel)
+                    {
+                        datos.ShowDialog();
+                    }
                 });
 
                 task.Start();

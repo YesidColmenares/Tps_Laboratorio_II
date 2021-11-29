@@ -229,7 +229,7 @@ namespace Entidades
                 }
                 else
                 {
-                    throw new DepositoListZeroAggregateException(null, "Entidades.Deposito<T>.AgregarLista(List<T> lista), Linea 217");
+                    throw new DepositoListZeroAggregateException(null, "Entidades.Deposito<T>.AgregarLista(List<T> lista), Linea 213");
                 }
             }
             else

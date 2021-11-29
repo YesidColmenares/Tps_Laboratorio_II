@@ -333,8 +333,21 @@ namespace Test_WindowsForm
                     this.txtNombreBaseDatos.Text = "Productos";
                     this.cmbDeposito.Text = "MercadoLibre";
                     this.groupDatosDDBB.Visible = false;
-                    this.Deposito.AgregarLista(this.Sql.ObtenerLista("Amazon"));
-                    this.Deposito.AgregarLista(this.Sql.ObtenerLista("MercadoLibre"));
+                    try
+                    {
+                        this.Deposito.AgregarLista(this.Sql.ObtenerLista("Amazon"));
+                        this.Deposito.AgregarLista(this.Sql.ObtenerLista("MercadoLibre"));
+                    }
+                    catch (DepositoListZeroAggregateException e)
+                    {
+                        MessageBox.Show($"{e.Message}");
+                    }
+                    catch (ArgumentNullException e)
+                    {
+                        MessageBox.Show($"{e.Message}\n\nPara poder utilizar la base de datos por defecto tienes que agregar la base de datos adjuntada en la carpeta del TP" +
+                            $" y tenes que cambiar el nombre del servidor por el de tu maquina.\nClase: FormBaseDeDatos, Linea: 332", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        this.DialogResult = DialogResult.Cancel;
+                    }
                     this.pgrssBarEstadoConexion.EstadoBarra = true;
                 }
                 else
