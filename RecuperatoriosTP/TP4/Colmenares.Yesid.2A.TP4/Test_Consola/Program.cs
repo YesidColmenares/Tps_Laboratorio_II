@@ -9,14 +9,7 @@ namespace Test_Consola
     {
         static void Main(string[] args)
         {
-            string pathML = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\Tps_Laboratorio_II\\TP3\\Colmenares.Yesid.2A.TP3\\Archivos\\MercadoLibre.txt";
-            string pathAZ = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\Tps_Laboratorio_II\\TP3\\Colmenares.Yesid.2A.TP3\\Archivos\\Amazon.txt";
-            string pathXML = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\Tps_Laboratorio_II\\TP3\\Colmenares.Yesid.2A.TP3\\Archivos\\Serializacion.xml";
-            string pathMLGuardar = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\Tps_Laboratorio_II\\TP3\\Colmenares.Yesid.2A.TP3\\Archivos\\MercadoLibreCopia.txt";
-            string pathAZGuardar = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\Tps_Laboratorio_II\\TP3\\Colmenares.Yesid.2A.TP3\\Archivos\\AmazonCopia.txt";
-            string pathXMLGuardar = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\Tps_Laboratorio_II\\TP3\\Colmenares.Yesid.2A.TP3\\Archivos\\SerializacionCopia.xml";
-
-
+            string pathXML = Environment.CurrentDirectory + "\\Archivos\\Serializacion.xml";
 
             Deposito<Producto> deposito;
 
@@ -62,16 +55,17 @@ namespace Test_Consola
             Program.LimpioElDeposito(deposito);
 
 
+            //GUARDO UNA LISTA DE PRODUCTOS EN UN ARCHIVO XML
+            deposito = Program.AgregarProductosAlDeposito();
+            Console.WriteLine("******************************************************************");
+            Console.WriteLine("GUARDO UNA LISTA DE PRODUCTOS EN UN ARCHIVO SERIALIZADO XML\n");
+            Program.GuardarListaDeProductosArchivoSerializadoXML(pathXML, deposito.Productos);
+
+
             //CARGO UN LISTA DE PRODUCTOS DESDE UN ARCHIVO SERIALIZADO XML
             Console.WriteLine("******************************************************************");
             Console.WriteLine("CARGO UNA LISTA DE PRODUCTOS DESDE UN ARCHIVO SERIALIZADO XML\n");
             deposito = Program.CargarListaDeProductosDesdeArchivoSerializadoXML(pathXML, deposito);
-
-
-            //GUARDO UNA LISTA DE PRODUCTOS EN UN ARCHIVO XML
-            Console.WriteLine("******************************************************************");
-            Console.WriteLine("GUARDO UNA LISTA DE PRODUCTOS EN UN ARCHIVO SERIALIZADO XML\n");
-            Program.GuardarListaDeProductosArchivoSerializadoXML(pathXMLGuardar, deposito.Productos);
         }
 
         public static Deposito<Producto> AgregarProductosAlDeposito()

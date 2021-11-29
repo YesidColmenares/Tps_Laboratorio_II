@@ -45,3 +45,15 @@ C:\Users\Yesid\Desktop\Tps_Laboratorio_II\TP4\Colmenares.Yesid.2A.TP4\BControles
 C:\Users\Yesid\Desktop\Tps_Laboratorio_II\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\obj\Debug\net5.0-windows\BControlesDeUsuario.dll
 C:\Users\Yesid\Desktop\Tps_Laboratorio_II\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\obj\Debug\net5.0-windows\ref\BControlesDeUsuario.dll
 C:\Users\Yesid\Desktop\Tps_Laboratorio_II\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\obj\Debug\net5.0-windows\BControlesDeUsuario.pdb
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\RecuperatoriosTP\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\bin\Debug\net5.0-windows\BControlesDeUsuario.deps.json
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\RecuperatoriosTP\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\bin\Debug\net5.0-windows\BControlesDeUsuario.dll
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\RecuperatoriosTP\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\bin\Debug\net5.0-windows\ref\BControlesDeUsuario.dll
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\RecuperatoriosTP\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\bin\Debug\net5.0-windows\BControlesDeUsuario.pdb
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\RecuperatoriosTP\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\obj\Debug\net5.0-windows\BControlesDeUsuario.csproj.AssemblyReference.cache
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\RecuperatoriosTP\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\obj\Debug\net5.0-windows\BControlesDeUsuario.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\RecuperatoriosTP\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\obj\Debug\net5.0-windows\BControlesDeUsuario.AssemblyInfoInputs.cache
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\RecuperatoriosTP\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\obj\Debug\net5.0-windows\BControlesDeUsuario.AssemblyInfo.cs
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\RecuperatoriosTP\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\obj\Debug\net5.0-windows\BControlesDeUsuario.csproj.CoreCompileInputs.cache
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\RecuperatoriosTP\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\obj\Debug\net5.0-windows\BControlesDeUsuario.dll
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\RecuperatoriosTP\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\obj\Debug\net5.0-windows\ref\BControlesDeUsuario.dll
+C:\Users\Yesid\Desktop\Tps_Laboratorio_II\RecuperatoriosTP\TP4\Colmenares.Yesid.2A.TP4\BControlesDeUsuario\obj\Debug\net5.0-windows\BControlesDeUsuario.pdb
